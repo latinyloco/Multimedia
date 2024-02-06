@@ -141,25 +141,57 @@ var game = {
         game.handlePanning();
 
         // Animar los personajes
-        
+
 
         // Dibujar el fondo con desplazamiento de paralaje
         game.context.drawImage(game.currentLevel.backgroundImage, game.offsetLeft / 4, 0, 640, 480, 0, 0, 640, 480);
-        game.context.drawImage(game.currentLevel.foregroundImage, game.offsetLeft, 0, 640, 480, 0, 0, 640, 480);
 
 
         // Dibujar la honda
         game.context.drawImage(game.slingshotImage, game.slingshotX - game.offsetLeft, game.slingshotY);
 
 
-        //CARGAR HEROES
-        for (var i = 0; i < 1; i++) {
+        //DIBUJAR HEROES
+        // Dibujar HEROES fijos a la derecha
+        var heroSpacing = 100; // Espacio entre los heroes
+        var totalHeroWidth = 0;
+
+        // Calcular el ancho total de los heroes
+        for (var i = 0; i < game.currentLevel.hero.length; i++) {
+            totalHeroWidth += game.currentLevel.hero[i].width;
+        }
+
+        var heroX = game.canvas.width - totalHeroWidth - (heroSpacing * (game.currentLevel.hero.length - 1)) + 250; // Ajuste para mover más hacia la derecha
+        var heroY = 50; // Coordenada Y de los heroes centrada verticalmente en la pantalla
+
+        for (var i = 0; i < game.currentLevel.hero.length; i++) {
             var entity = game.currentLevel.hero[i];
-            console.log(entity);
-            game.context.drawImage(entity, entity.x - game.offsetLeft, entity.y);
+            game.context.drawImage(entity, heroX - game.offsetLeft, heroY);
+            heroX += entity.width + heroSpacing; // Ajustar la posición X para el próximo heroes
         }
 
 
+        //DIBUJAR ENEMIGOS
+        // Dibujar enemigos fijos a la derecha
+        var enemySpacing = 100; // Espacio entre los enemigos
+        var totalEnemyWidth = 0;
+
+        // Calcular el ancho total de los enemigos
+        for (var i = 0; i < game.currentLevel.enemy.length; i++) {
+            totalEnemyWidth += game.currentLevel.enemy[i].width;
+        }
+
+        var enemyX = game.canvas.width - totalEnemyWidth - (enemySpacing * (game.currentLevel.enemy.length - 1)) + 250; // Ajuste para mover más hacia la derecha
+        var enemyY = game.canvas.height / 2 - game.currentLevel.enemy[0].height / 2; // Coordenada Y de los enemigos centrada verticalmente en la pantalla
+
+        for (var i = 0; i < game.currentLevel.enemy.length; i++) {
+            var entity = game.currentLevel.enemy[i];
+            game.context.drawImage(entity, enemyX - game.offsetLeft, enemyY);
+            enemyX += entity.width + enemySpacing; // Ajustar la posición X para el próximo enemigo
+        }
+
+
+        //Para cuando se acabe el juego
         if (!game.ended) {
             game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
         }
@@ -175,16 +207,38 @@ var levels = {
             foreground: 'desert-foreground',
             background: 'clouds-background',
             entities: [
-                { type: 'enemy', x: 1000, y: 1000, image: 'images/entities/pizza.png' },
-                { type: 'heroe', x: 10000, y: 10000, image: 'images/entities/orange.png' }
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/portalgun.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/picklerick.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/poopybutthole.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/plumbus.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/meeseeks.png' },
+                { type: 'enemy', x: 1000, y: 1000, image: 'images/entities/tammy.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/phoenixperson.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/evilmorty.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/bolognese.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/sunscream.png' },
+                
+                { type: 'structure', x: 10000, y: 10000, image: 'images/entities/wood.png' },
+                { type: 'structure', x: 10000, y: 10000, image: 'images/entities/glass.png' }
             ]
         },
         { // Segundo nivel
             foreground: 'desert-foreground',
             background: 'clouds-background',
             entities: [
-                { type: 'enemy', x: 500, y: 500, image: 'images/entities/pizza.png' },
-                { type: 'heroe', x: 400, y: 400, image: 'images/entities/orange.png' }
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/portalgun.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/picklerick.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/poopybutthole.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/plumbus.png' },
+                { type: 'hero', x: 10000, y: 10000, image: 'images/entities/meeseeks.png' },
+                { type: 'enemy', x: 1000, y: 1000, image: 'images/entities/tammy.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/phoenixperson.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/evilmorty.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/bolognese.png' },
+                { type: 'enemy', x: 10000, y: 10000, image: 'images/entities/sunscream.png' },
+                
+                { type: 'structure', x: 10000, y: 10000, image: 'images/entities/wood.png' },
+                { type: 'structure', x: 10000, y: 10000, image: 'images/entities/glass.png' }
             ]
         }
     ],
@@ -209,26 +263,33 @@ var levels = {
     load: function (number) {
 
         //Declarar un nuevo objeto de nivel actual
-        game.currentLevel = { number: number, hero: [] };
+        game.currentLevel = { number: number, hero: [], enemy: [] };
         game.score = 0;
         $('#score').html('Score: ' + game.score);
-        game.currentHero = 1;
+        game.currentHero = 5;
         var level = levels.data[number];
 
-        
+
         //Cargar las imágenes de fondo, primer plano y honda
-        game.currentLevel.backgroundImage = loader.loadImage("images/backgrounds/" + level.background + ".png");
-        game.currentLevel.foregroundImage = loader.loadImage("images/backgrounds/" + level.foreground + ".png");
+        game.currentLevel.backgroundImage = loader.loadImage("images/backgrounds/background.png");
         game.slingshotImage = loader.loadImage("images/slingshot.png");
         game.slingshotFrontImage = loader.loadImage("images/slingshot-front.png");
 
 
-        //CARGAR ENTIDADES
+        //CARGAR HEORES Y VILLANOS
+        //Recorrer la data para tener heores y villanos en el game.currentLevel (nivel que se está jugando)
         var j = 0;
         for (var i = 0; i < level.entities.length; i++) {
-            var entity = level.entities[i];
-            if(level.entities[i].type == "heroe"){
+            if (level.entities[i].type == "hero") {
                 game.currentLevel.hero[j] = loader.loadImage(level.entities[i].image);
+                j++;
+            }
+
+        }
+        j = 0;
+        for (var i = 0; i < level.entities.length; i++) {
+            if (level.entities[i].type == "enemy") {
+                game.currentLevel.enemy[j] = loader.loadImage(level.entities[i].image);
                 j++;
             }
 
@@ -236,7 +297,7 @@ var levels = {
 
         //Llamar a game.start() una vez que todos los assets han sido cargados
         if (loader.loaded) {
-            
+
             game.start()
         } else {
             loader.onload = game.start;
