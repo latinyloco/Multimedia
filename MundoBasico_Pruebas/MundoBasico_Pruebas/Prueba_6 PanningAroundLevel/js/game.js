@@ -22,7 +22,7 @@
         window.cancelAnimationFrame = function (id) {
             clearTimeout(id);
         };
-}());
+})();
 
 $(window).load(function () {
     game.init();
@@ -40,9 +40,16 @@ var game = {
         $('.gamelayer').hide();
         $('#gamestartscreen').show();
 
-        //Obtener manejador para el canvas del juego y el contexto
+        // Obtener manejador para el canvas del juego y el contexto
         game.canvas = $('#gamecanvas')[0];
         game.context = game.canvas.getContext('2d');
+
+        // Agregar eventos de ratón para mover la honda
+        $('#gamecanvas').mousemove(function (e) {
+            // Actualizar las coordenadas de la honda según la posición del cursor
+            game.slingshotX = e.pageX - game.canvas.offsetLeft;
+            game.slingshotY = e.pageY - game.canvas.offsetTop;
+        });
     },
 
     showLevelScreen: function () {
@@ -118,13 +125,18 @@ var game = {
             }
         }
 
+        // NO SE SI ESTÁ BIEN
         if (game.mode == "load-next-hero") {
-            //TODO:
-            //Verificar si los vilanos están vivos, si no terminar el nivel (éxito)
-            //Verificar si faltan héroes por cargar, si no terminar el nivel (fracaso)
-            //Cargar el héroe y fijar el modo a "wait-for-firing" 
-            game.mode == "wait-for-firing";
+            if (game.checkEnemies() && game.currentHero < game.currentLevel.hero.length) {
+                // Cargar el siguiente héroe
+                game.currentHero++;
+                game.mode = "wait-for-firing";
+            } else {
+                // No quedan enemigos o héroes por cargar, terminar el nivel
+                game.ended = true;
+            }
         }
+        
 
         if (game.mode == "firing") {
             game.panTo(game.slingshotX);
@@ -135,6 +147,7 @@ var game = {
             //Hacer un barrido hasta donde se encuentra el héroe actualmente
         }
     },
+    
 
     animate: function () {
         // Animar el fondo
