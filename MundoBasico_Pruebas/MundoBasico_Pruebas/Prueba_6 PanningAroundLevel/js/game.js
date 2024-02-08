@@ -43,13 +43,14 @@ var game = {
         // Obtener manejador para el canvas del juego y el contexto
         game.canvas = $('#gamecanvas')[0];
         game.context = game.canvas.getContext('2d');
-
+        
+        /**
         // Agregar eventos de ratón para mover la honda
         $('#gamecanvas').mousemove(function (e) {
             // Actualizar las coordenadas de la honda según la posición del cursor
             game.slingshotX = e.pageX - game.canvas.offsetLeft;
             game.slingshotY = e.pageY - game.canvas.offsetTop;
-        });
+        });*/
     },
 
     showLevelScreen: function () {
