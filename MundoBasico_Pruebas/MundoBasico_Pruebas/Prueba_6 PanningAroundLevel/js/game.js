@@ -415,6 +415,7 @@ var levels = {
             ]
         },
         {   // Segundo nivel
+            foreground: 'splashscreen',
             background: 'background',
             entities: [
                 { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
