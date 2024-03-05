@@ -940,12 +940,30 @@ var mouse = {
 }
 
 
-
-function back(){
-
+function back() {
     $('#gamestartscreen').hide();
     $('#chageBack').show();
 
+    var images = ['backgrounds\background.png', 'backgrounds\bg1.png', 'backgrounds\bg2.png', 'backgrounds\bg4.png']; // Añade aquí las URLs de las imágenes que desees
 
+    var html = "";
+    for (var i = 0; i < 2; i++) {
+        var level = levels.data[i];
+        html += '<input type="button" class="levelButton" value="' + (i + 1) + '" data-image="' + images[i] + '">';
+    }
+    $('#chageBack').html(html);
+
+    // Establecer los controladores de eventos de clic de botón para cambiar el fondo
+    $('.levelButton').click(function () {
+        var imageUrl = $(this).data('image');
+        $('body').css('background-image', 'url(' + imageUrl + ')');
+    });
+
+    // Establecer el controlador de evento de clic para el botón de regreso
+    $('#gamestartscreen img').click(function () {
+        $('#chageBack').show(); // Muestra chageBack
+        $('#gamestartscreen').hide(); // Oculta gamestartscreen
+    });
+    
 }
 
