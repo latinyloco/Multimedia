@@ -396,8 +396,8 @@ var levels = {
     // Datos de nivel
     data: [
         {   // Primer nivel 
-            foreground: 'splashscreen',
-            background: 'background',
+            foreground: 'background',
+            background: 'splashscreen',
             entities: [
                 { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
                 { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
@@ -415,8 +415,8 @@ var levels = {
             ]
         },
         {   // Segundo nivel
-            foreground: 'splashscreen',
-            background: 'background',
+            foreground: 'background',
+            background: 'splashscreen',
             entities: [
                 { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
                 { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
@@ -439,7 +439,78 @@ var levels = {
                 { type: "hero", name: "plumbus", x: 80, y: 405 },
                 { type: "hero", name: "portalgun", x: 140, y: 405 },
             ]
+        },
+
+        {   // Tercer nivel
+            foreground: 'background',
+            background: 'splashscreen',
+            entities: [
+                { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
+                { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
+
+                { type: "block", name: "glass", x: 720, y: 80, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 180, angle: 90, width: 100, height: 25 },
+
+                { type: "block", name: "wood", x: 820, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 670, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 317.5, width: 100, height: 25 },
+
+                { type: "block", name: "glass", x: 670, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 192.5, width: 100, height: 25 },
+
+                { type: "villain", name: "tammy", x: 715, y: 255, calories: 590 },
+                { type: "villain", name: "evilmorty", x: 670, y: 355, calories: 420 },
+                { type: "villain", name: "phoenixperson", x: 720, y: 50, calories: 400 },
+
+                { type: "hero", name: "picklerick", x: 30, y: 415 },
+                { type: "hero", name: "plumbus", x: 80, y: 405 },
+                { type: "hero", name: "portalgun", x: 140, y: 405 },
+                { type: "hero", name: "meesseeks", x: 140, y: 405 },
+            ]
+        },
+
+        {   // Cuarto nivel
+            foreground: 'background',
+            background: 'splashscreen',
+            entities: [
+                { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
+                { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
+
+
+                { type: "block", name: "wood", x: 520, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 570, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 570, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 192.5, width: 100, height: 25 },
+
+                { type: "block", name: "wood", x: 820, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 670, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 317.5, width: 100, height: 25 },
+
+                { type: "block", name: "glass", x: 670, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 192.5, width: 100, height: 25 },
+
+
+
+                { type: "villain", name: "tammy", x: 715, y: 155, calories: 590 },
+                { type: "villain", name: "evilmorty", x: 670, y: 405, calories: 420 },
+                { type: "villain", name: "bolognese", x: 580, y: 405, calories: 250 },
+                { type: "villain", name: "sunscream", x: 720, y: 255, calories: 150 },
+
+                { type: "hero", name: "poopybutthole", x: 30, y: 215 },
+                { type: "hero", name: "picklerick", x: 30, y: 415 },
+                { type: "hero", name: "plumbus", x: 80, y: 405 },
+                { type: "hero", name: "portalgun", x: 140, y: 405 },
+                { type: "hero", name: "meesseeks", x: 140, y: 105 },
+            ]
         }
+
+
     ],
 
     // Inicializar pantalla de selección de nivel
@@ -513,9 +584,12 @@ var entities = {
 		},
 
         "bolognese": {
-            density: 3.0,
-            friction: 1.5,
-            restitution: 0.2,
+            shape: "circle",
+            fullHealth: 40,
+            radius: 25,
+            density: 1,
+            friction: 0.5,
+            restitution: 0.4,
         },
         "evilmorty": {
             shape: "circle",
@@ -526,13 +600,12 @@ var entities = {
             restitution: 0.4,
         },
         "meeseeks": {
-            shape: "rectangle",
-            fullHealth: 80,
-            width: 40,
-            height: 60,
+            shape: "circle",
+            fullHealth: 40,
+            radius: 25,
             density: 1,
             friction: 0.5,
-            restitution: 0.7,
+            restitution: 0.4,
         },
         "phoenixperson": {
             shape: "rectangle",
@@ -864,5 +937,15 @@ var mouse = {
         mouse.down = false;
         mouse.dragging = false;
     }
+}
+
+
+
+function back(){
+
+    $('#gamestartscreen').hide();
+    $('#chageBack').show();
+
+
 }
 
