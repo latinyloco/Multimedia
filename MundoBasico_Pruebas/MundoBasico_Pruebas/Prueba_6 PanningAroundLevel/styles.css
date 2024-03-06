@@ -108,3 +108,70 @@ endingscreen {
     text-shadow: 0 0 2px #000;
 	color:white;
 }
+
+
+
+/*BACK*/
+#gamelayer {
+    width: 100%;
+    height: 100%; /* Ajusta la altura al tamaño del contenido */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Centra los elementos horizontalmente */
+}
+
+#chageBack {
+	padding-top: 300px;
+    display: inline-block; /* Asegura que el contenedor no ocupe toda la línea */
+    text-align: center; /* Alinea los botones horizontalmente */
+}
+
+.levelButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px 40px; /* Ajusta el tamaño del botón según sea necesario */
+    font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+    color: white; /* Cambia el color del texto a blanco */
+    background-color: #333; /* Cambia el color de fondo del botón */
+    border: none; /* Elimina el borde del botón si lo deseas */
+    cursor: pointer;
+    border-radius: 10px; /* Agrega bordes redondeados al botón */
+}
+
+
+
+
+/* Titulo */
+#overlay {
+    position: absolute;
+    top: 16%; /* Ajusta este valor para posicionar el div más arriba */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    padding: 5px 20px; /* Ajusta este valor para que el padding se ajuste solo por encima y por debajo del texto */
+    border-radius: 10px; /* Ajusta este valor para hacer las esquinas más redondeadas */
+    text-align: center;
+    color: black; /* Color de texto negro */
+    font-size: 48px; /* Ajusta este valor para hacer las letras más grandes */
+    font-weight: bold; /* Hace que las letras sean más gruesas */
+    font-family: 'Arial Rounded MT Bold', sans-serif; /* Cambia el tipo de fuente a una más redonda */
+    white-space: nowrap; /* Evita que el texto se salga de línea */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

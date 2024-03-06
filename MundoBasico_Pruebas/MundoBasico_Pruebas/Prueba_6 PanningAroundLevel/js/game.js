@@ -944,26 +944,29 @@ function back() {
     $('#gamestartscreen').hide();
     $('#chageBack').show();
 
-    var images = ['backgrounds\background.png', 'backgrounds\bg1.png', 'backgrounds\bg2.png', 'backgrounds\bg4.png']; // Añade aquí las URLs de las imágenes que desees
+    var images = ['images/backgrounds/background.png', 'images/backgrounds/bg3.png', 'images/backgrounds/bg2.png', 'images/backgrounds/bg4.png']; // Rutas de las imágenes
 
     var html = "";
-    for (var i = 0; i < 2; i++) {
-        var level = levels.data[i];
+    for (var i = 0; i < images.length; i++) { //iterar sobre todas las imágenes
         html += '<input type="button" class="levelButton" value="' + (i + 1) + '" data-image="' + images[i] + '">';
     }
     $('#chageBack').html(html);
 
-    // Establecer los controladores de eventos de clic de botón para cambiar el fondo
-    $('.levelButton').click(function () {
+    //establecer las imágenes de fondo para cada botón
+    $('.levelButton').each(function(index) {
         var imageUrl = $(this).data('image');
-        $('body').css('background-image', 'url(' + imageUrl + ')');
+        $(this).css('background-image', 'url(' + imageUrl + ')');
     });
 
-    // Establecer el controlador de evento de clic para el botón de regreso
-    $('#gamestartscreen img').click(function () {
-        $('#chageBack').show(); // Muestra chageBack
-        $('#gamestartscreen').hide(); // Oculta gamestartscreen
+    //controladores de eventos de clic de botón para cambiar el fondo
+    $('.levelButton').click(function () {
+        var imageUrl = $(this).data('image');
+        $('#gamecontainer').css('background-image', 'url(' + imageUrl + ')');
+        $('#chageBack').hide(); //oculta chageBack
+        $('#gamestartscreen').show(); //muestra gamestartscreen
     });
-    
+
+    $('#overlay').show();
 }
+
 
