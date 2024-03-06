@@ -396,8 +396,8 @@ var levels = {
     // Datos de nivel
     data: [
         {   // Primer nivel 
-            foreground: 'splashscreen',
-            background: 'background',
+            foreground: 'background',
+            background: 'splashscreen',
             entities: [
                 { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
                 { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
@@ -411,12 +411,12 @@ var levels = {
                 { type: "villain", name: "phoenixperson", x: 620, y: 205, calories: 420 },
 
                 { type: "hero", name: "portalgun", x: 80, y: 405 },
-                { type: "hero", name: "meeseeks", x: 140, y: 405 },
+                { type: "hero", name: "meesseeks", x: 140, y: 405 },
             ]
         },
         {   // Segundo nivel
-            foreground: 'splashscreen',
-            background: 'background',
+            foreground: 'background',
+            background: 'splashscreen',
             entities: [
                 { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
                 { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
@@ -430,45 +430,87 @@ var levels = {
                 { type: "block", name: "glass", x: 670, y: 255, angle: 90, width: 100, height: 25 },
                 { type: "block", name: "glass", x: 770, y: 255, angle: 90, width: 100, height: 25 },
                 { type: "block", name: "wood", x: 720, y: 192.5, width: 100, height: 25 },
-                
+
+                { type: "villain", name: "tammy", x: 715, y: 155, calories: 590 },
                 { type: "villain", name: "evilmorty", x: 670, y: 405, calories: 420 },
-                { type: "villain", name: "tammy", x: 920, y: 305, calories: 590 },
-                { type: "villain", name: "bolognese", x:870, y:175, calories: 150 },
+                { type: "villain", name: "bolognese", x: 765, y: 400, calories: 150 },
 
                 { type: "hero", name: "picklerick", x: 30, y: 415 },
                 { type: "hero", name: "plumbus", x: 80, y: 405 },
                 { type: "hero", name: "portalgun", x: 140, y: 405 },
             ]
         },
+
         {   // Tercer nivel
-			foreground: 'splashscreen',
-            background: 'background',
-			entities:[
-				{ type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
-				{ type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
-                
-                { type: "block", name: "wood", x: 590, y: 380, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "wood", x: 620, y: 380, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "wood", x: 720, y: 380, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "glass", x: 670, y: 317.5, width: 100, height: 25 },
+            foreground: 'background',
+            background: 'splashscreen',
+            entities: [
+                { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
+                { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
 
-				{ type: "block", name: "wood", x: 635, y: 255, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "wood", x: 705, y: 255, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "glass", x: 670, y: 192.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 720, y: 80, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 180, angle: 90, width: 100, height: 25 },
 
-				{ type: "block", name: "wood", x: 635, y: 130, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "wood", x: 705, y: 130, angle: 90, width: 100, height: 25 },
-				{ type: "block", name: "glass", x: 670, y: 67.5, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 820, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 670, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 317.5, width: 100, height: 25 },
 
-				{ type: "villain", name: "phoenixperson", x: 670, y: 380, calories: 420 },
-				{ type: "villain", name: "tammy", x: 670, y: 255, calories: 200 },
-				{ type: "villain", name: "evilmorty", x: 670, y: 130, calories: 150 },
+                { type: "block", name: "glass", x: 670, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 192.5, width: 100, height: 25 },
 
-				{ type: "hero", name: "picklerick", x: 30, y: 415 },
-				{ type: "hero", name: "meeseeks", x: 140, y: 405 },
-				{ type: "hero", name: "plumbus", x: 80, y: 405 }
-			]
-		}
+                { type: "villain", name: "tammy", x: 715, y: 255, calories: 590 },
+                { type: "villain", name: "evilmorty", x: 670, y: 355, calories: 420 },
+                { type: "villain", name: "phoenixperson", x: 720, y: 50, calories: 400 },
+
+                { type: "hero", name: "picklerick", x: 30, y: 415 },
+                { type: "hero", name: "plumbus", x: 80, y: 405 },
+                { type: "hero", name: "portalgun", x: 140, y: 405 },
+                { type: "hero", name: "meesseeks", x: 140, y: 405 },
+            ]
+        },
+
+        {   // Cuarto nivel
+            foreground: 'background',
+            background: 'splashscreen',
+            entities: [
+                { type: "ground", name: "dirt", x: 500, y: 440, width: 1000, height: 20, isStatic: true },
+                { type: "ground", name: "wood", x: 185, y: 390, width: 30, height: 80, isStatic: true },
+
+
+                { type: "block", name: "wood", x: 520, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 570, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 570, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 192.5, width: 100, height: 25 },
+
+                { type: "block", name: "wood", x: 820, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 620, y: 380, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 670, y: 317.5, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 317.5, width: 100, height: 25 },
+
+                { type: "block", name: "glass", x: 670, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "glass", x: 770, y: 255, angle: 90, width: 100, height: 25 },
+                { type: "block", name: "wood", x: 720, y: 192.5, width: 100, height: 25 },
+
+
+
+                { type: "villain", name: "tammy", x: 715, y: 155, calories: 590 },
+                { type: "villain", name: "evilmorty", x: 670, y: 405, calories: 420 },
+                { type: "villain", name: "bolognese", x: 580, y: 405, calories: 250 },
+                { type: "villain", name: "sunscream", x: 720, y: 255, calories: 150 },
+
+                { type: "hero", name: "poopybutthole", x: 30, y: 215 },
+                { type: "hero", name: "picklerick", x: 30, y: 415 },
+                { type: "hero", name: "plumbus", x: 80, y: 405 },
+                { type: "hero", name: "portalgun", x: 140, y: 405 },
+                { type: "hero", name: "meesseeks", x: 140, y: 105 },
+            ]
+        }
+
+
     ],
 
     // Inicializar pantalla de selección de nivel
@@ -542,27 +584,26 @@ var entities = {
 		},
 
         "bolognese": {
-            shape: "rectangle",
-            fullHealth: 50,
-            width: 40,
-            height: 50,
+            shape: "circle",
+            fullHealth: 40,
+            radius: 25,
             density: 1,
             friction: 0.5,
-            restitution: 0.6,
+            restitution: 0.4,
         },
         "evilmorty": {
-            shape: "rectangle",
-            fullHealth: 50,
-            width: 40,
-            height: 50,
+            shape: "circle",
+            fullHealth: 40,
+            radius: 25,
             density: 1,
             friction: 0.5,
-            restitution: 0.6,
+            restitution: 0.4,
         },
         "meeseeks": {
             shape: "circle",
+            fullHealth: 40,
             radius: 25,
-            density: 1.5,
+            density: 1,
             friction: 0.5,
             restitution: 0.4,
         },
@@ -611,13 +652,11 @@ var entities = {
             restitution: 0.5,
         },
         "tammy": {
-            shape: "rectangle",
-            fullHealth: 80,
-            width: 40,
-            height: 50,
-            density: 1,
+            shape: "circle",
+            radius: 20,
+            density: 1.5,
             friction: 0.5,
-            restitution: 0.6,
+            restitution: 0.5,
         },
     },
     // Tomar la entidad, crear un cuerpo box2d y añadirlo al mundo
@@ -899,4 +938,35 @@ var mouse = {
         mouse.dragging = false;
     }
 }
+
+
+function back() {
+    $('#gamestartscreen').hide();
+    $('#chageBack').show();
+
+    var images = ['images/backgrounds/background.png', 'images/backgrounds/bg3.png', 'images/backgrounds/bg2.png', 'images/backgrounds/bg4.png']; // Rutas de las imágenes
+
+    var html = "";
+    for (var i = 0; i < images.length; i++) { //iterar sobre todas las imágenes
+        html += '<input type="button" class="levelButton" value="' + (i + 1) + '" data-image="' + images[i] + '">';
+    }
+    $('#chageBack').html(html);
+
+    //establecer las imágenes de fondo para cada botón
+    $('.levelButton').each(function(index) {
+        var imageUrl = $(this).data('image');
+        $(this).css('background-image', 'url(' + imageUrl + ')');
+    });
+
+    //controladores de eventos de clic de botón para cambiar el fondo
+    $('.levelButton').click(function () {
+        var imageUrl = $(this).data('image');
+        $('#gamecontainer').css('background-image', 'url(' + imageUrl + ')');
+        $('#chageBack').hide(); //oculta chageBack
+        $('#gamestartscreen').show(); //muestra gamestartscreen
+    });
+
+    $('#overlay').show();
+}
+
 
